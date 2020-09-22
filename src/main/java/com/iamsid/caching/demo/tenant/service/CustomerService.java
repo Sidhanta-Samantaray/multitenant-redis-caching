@@ -24,8 +24,11 @@ public class CustomerService extends AbstractService {
         log.info("Tenant:-" + TenantContext.getTenant().get());
         return this.repository.findAll();
     }
-    @CacheEvict(value = {"customers"},allEntries = true)
-    public void evictAll(){
 
+    /**
+     * Used to Clean entries for specific tenant
+     */
+    @CacheEvict(value = {"customers"}, allEntries = true)
+    public void evictAll() {
     }
 }

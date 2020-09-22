@@ -15,13 +15,19 @@ public class CustomCacheManager extends RedisCacheManager {
         super(cacheWriter, defaultCacheConfiguration);
 
     }
+
+    /**
+     * @param name
+     * @return Prefix the cache store name with the TENANT KEY
+     * For SUPER ADMIN no prefix applied
+     */
     @Override
     public Cache getCache(String name) {
         log.info("Inside getCache:" + name);
         String tenantId = TenantContext.getTenant().get();
         if (tenantId.equals(Constants.SUPER_ADMIN_TENANT)) {
             return super.getCache(name);
-        }else if(name.startsWith(tenantId)){
+        } else if (name.startsWith(tenantId)) {
             return super.getCache(name);
         }
         return super.getCache(tenantId + "_" + name);

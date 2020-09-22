@@ -25,8 +25,9 @@ public class CustomerController {
     public List<Customer> getCustomers() {
         return this.customerService.getAllCustomer();
     }
+
     @DeleteMapping(value = "/evict")
-    public void evictCaches(){
+    public void evictCaches() {
         this.customerService.evictAll();
     }
 }
