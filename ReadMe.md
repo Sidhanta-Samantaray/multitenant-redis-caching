@@ -3,6 +3,15 @@
 ###### Start Redis in Local System
 > docker run --name local-redis -p 6379:6379 -d redis
 
+###### To start the Application
+- Provide PostgreSQL details in application.properties file
+- Run below command
+     - clean spring-boot:run
+- Swagger URL
+    - http://localhost:8080/vibes/demo/api/swagger-ui/index.html  
+  
+
+
 ![image](./docs/diagram.png)
 
 ### Reference Documentation
@@ -23,6 +32,5 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Messaging with Redis](https://spring.io/guides/gs/messaging-redis/)
 * [Messaging with Redis](https://spring.io/guides/gs/messaging-redis/)
 
