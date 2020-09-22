@@ -3,7 +3,7 @@
 ###### Start Redis in Local System
 > docker run --name local-redis -p 6379:6379 -d redis
 
-![image](./docs/diagram.jpeg)
+![image](./docs/diagram.png)
 
 ### Reference Documentation
 For further reference, please consider the following sections:
