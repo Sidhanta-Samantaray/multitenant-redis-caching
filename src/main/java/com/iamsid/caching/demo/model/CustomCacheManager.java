@@ -13,7 +13,10 @@ import org.springframework.data.redis.cache.RedisCacheWriter;
 public class CustomCacheManager extends RedisCacheManager {
     public CustomCacheManager(RedisCacheWriter cacheWriter, RedisCacheConfiguration defaultCacheConfiguration) {
         super(cacheWriter, defaultCacheConfiguration);
-
+        RedisCacheManager.builder()
+                .cacheWriter(cacheWriter)
+                .cacheDefaults(defaultCacheConfiguration)
+                .build();
     }
 
     /**
