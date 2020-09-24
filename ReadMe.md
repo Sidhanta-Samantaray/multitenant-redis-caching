@@ -30,8 +30,9 @@
    ]
 ```
 
+Use [sample data](./docs/sample-data.xlsx) for populating the database table
 
-##### Intercepting Requests
+###### Intercepting Requests
 ```java
 @Configuration
 @EnableWebMvc
