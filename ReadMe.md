@@ -9,7 +9,11 @@
      - clean spring-boot:run
 - Swagger URL
     - http://localhost:8080/vibes/demo/api/swagger-ui/index.html  
-  
+
+ ![image](./docs/diagram.png)
+
+- API Spec
+ 
         ```yaml
         swagger: '2.0'
         info:
@@ -118,7 +122,6 @@
         
         ```
 
-![image](./docs/diagram.png)
 
 ### Reference Documentation
 For further reference, please consider the following sections:
