@@ -23,5 +23,6 @@ public class Customer implements Serializable {
     @Id
     String id;
     String name;
+    //Identifier to distinguish each tenant
     String tenant;
 }
