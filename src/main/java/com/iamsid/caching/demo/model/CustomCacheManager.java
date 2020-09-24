@@ -28,6 +28,7 @@ public class CustomCacheManager extends RedisCacheManager {
     public Cache getCache(String name) {
         log.info("Inside getCache:" + name);
         String tenantId = TenantContext.getTenant().get();
+        log.info("Use Tenant:-" + tenantId);
         if (tenantId.equals(Constants.SUPER_ADMIN_TENANT)) {
             return super.getCache(name);
         } else if (name.startsWith(tenantId)) {
