@@ -10,7 +10,113 @@
 - Swagger URL
     - http://localhost:8080/vibes/demo/api/swagger-ui/index.html  
   
-
+        ```yaml
+        swagger: '2.0'
+        info:
+          description: Api Documentation
+          version: '1.0'
+          title: Api Documentation
+          termsOfService: 'urn:tos'
+          contact: {}
+          license:
+            name: Apache 2.0
+            url: 'http://www.apache.org/licenses/LICENSE-2.0'
+        host: 'localhost:8080'
+        tags:
+          - name: cache-controller
+            description: Cache Controller
+          - name: customer-controller
+            description: Customer Controller
+        paths:
+          /vibes/demo/api/admin/caches:
+            get:
+              tags:
+                - cache-controller
+              summary: cacheNames
+              operationId: cacheNamesUsingGET
+              produces:
+                - application/json
+              responses:
+                '200':
+                  description: OK
+                  schema:
+                    type: array
+                    items:
+                      type: string
+                '401':
+                  description: Unauthorized
+                '403':
+                  description: Forbidden
+                '404':
+                  description: Not Found
+          /vibes/demo/api/admin/caches/evict:
+            delete:
+              tags:
+                - cache-controller
+              summary: evictAll
+              operationId: evictAllUsingDELETE
+              produces:
+                - application/json
+              responses:
+                '200':
+                  description: OK
+                '204':
+                  description: No Content
+                '401':
+                  description: Unauthorized
+                '403':
+                  description: Forbidden
+          /vibes/demo/api/tenant/customer:
+            get:
+              tags:
+                - customer-controller
+              summary: getCustomers
+              operationId: getCustomersUsingGET
+              produces:
+                - application/json
+              responses:
+                '200':
+                  description: OK
+                  schema:
+                    type: array
+                    items:
+                      $ref: '#/definitions/Customer'
+                '401':
+                  description: Unauthorized
+                '403':
+                  description: Forbidden
+                '404':
+                  description: Not Found
+          /vibes/demo/api/tenant/customer/evict:
+            delete:
+              tags:
+                - customer-controller
+              summary: evictCaches
+              operationId: evictCachesUsingDELETE
+              produces:
+                - application/json
+              responses:
+                '200':
+                  description: OK
+                '204':
+                  description: No Content
+                '401':
+                  description: Unauthorized
+                '403':
+                  description: Forbidden
+        definitions:
+          Customer:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              tenant:
+                type: string
+            title: Customer
+        
+        ```
 
 ![image](./docs/diagram.png)
 
