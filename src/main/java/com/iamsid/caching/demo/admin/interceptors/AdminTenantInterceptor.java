@@ -19,5 +19,9 @@ public class AdminTenantInterceptor implements HandlerInterceptor {
         TenantContext.setTenant(tenantId);
         return true;
     }
-
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        TenantContext.clear();
+        log.info("Life Cycle End");
+    }
 }
