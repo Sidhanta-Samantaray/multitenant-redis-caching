@@ -10,4 +10,8 @@ public class TenantContext {
     public static void setTenant(ThreadLocal<String> tenant) {
         TenantContext.tenant = tenant;
     }
+
+    public static void clear(){
+        tenant.remove();
+    }
 }
